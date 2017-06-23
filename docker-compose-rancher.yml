@@ -1,23 +1,27 @@
 version: '2'
 services:
   graphite:
-   image: quay.io/alayacare/owl.graphite
-   container_name: graphite-server
-   restart: always
-   ports:
+    image: quay.io/alayacare/owl.graphite
+    container_name: graphite-server
+    restart: always
+    ports:
       - "2003:2003"
-   volumes:
+    volumes:
       - /data/graphite/storage/whisper:/opt/graphite/storage/whisper
+    labels:
+      io.rancher.container.pull_image: always
   graphite-beacon:
     image: quay.io/alayacare/owl.graphite-beacon
     container_name: graphite-server-beacon
-    restart: always
+    labels:
+      io.rancher.container.pull_image: always
     depends_on:
       - graphite
   grafana:
     image: grafana/grafana
     container_name: grafana-server
-    restart: always
+    labels:
+      io.rancher.container.pull_image: always
     depends_on:
       - graphite-beacon
     ports:
@@ -46,7 +50,8 @@ services:
   maildev:
     image: djfarrelly/maildev
     container_name: maildev-server
-    restart: always
+    labels:
+      io.rancher.container.pull_image: always
     depends_on:
       - grafana-auto
     ports:
