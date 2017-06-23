@@ -56,3 +56,4 @@ services:
       - grafana-auto
     ports:
       - "1025:25"
+
