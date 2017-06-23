@@ -1,14 +1,14 @@
 version: '2'
 services:
   graphite:
-   image: sitespeedio/graphite
+   build: ./graphite
    container_name: graphite-server
    restart: always
    ports:
       - "80:80"
       - "2003:2003"
   graphite-beacon:
-    image: deliverous/graphite-beacon
+    build: ./graphite-beacon
     container_name: graphite-server-beacon
     restart: always
     depends_on:
@@ -30,7 +30,7 @@ services:
       - GF_USERS_ALLOW_SIGN_UP=false
       - GF_USERS_ALLOW_ORG_CREATE=false
   grafana-auto:
-    build: .
+    build: ./grafana-auto
     container_name: grafana-auto
     links:
       - grafana
