@@ -1,13 +1,13 @@
 version: '2'
 services:
   graphite:
-   build: ./graphite
+   image: quay.io/alayacare/owl.graphite
    container_name: graphite-server
    restart: always
    ports:
       - "2003:2003"
   graphite-beacon:
-    build: ./graphite-beacon
+    image: quay.io/alayacare/owl.graphite-beacon
     container_name: graphite-server-beacon
     restart: always
     depends_on:
@@ -29,7 +29,7 @@ services:
       - GF_USERS_ALLOW_SIGN_UP=false
       - GF_USERS_ALLOW_ORG_CREATE=false
   grafana-auto:
-    build: ./grafana-auto
+    image: quay.io/alayacare/owl.grafana-auto
     container_name: grafana-auto
     labels:
       io.rancher.container.start_once: 'true'
