@@ -1,0 +1,50 @@
+version: '2'
+services:
+  graphite:
+   image: sitespeedio/graphite
+   container_name: graphite-server
+   restart: always
+   ports:
+      - "80:80"
+      - "2003:2003"
+  graphite-beacon:
+    image: deliverous/graphite-beacon
+    container_name: graphite-server-beacon
+    restart: always
+    depends_on:
+      - graphite
+  grafana:
+    image: grafana/grafana
+    container_name: grafana-server
+    restart: always
+    depends_on:
+      - graphite-beacon
+    ports:
+      - "3000:3000"
+    links:
+      - graphite:graphite-server
+    environment:
+      - GF_SECURITY_ADMIN_USER=alayadash
+      - GF_SECURITY_ADMIN_PASSWORD=hpjxnbqbxEABDKiQ63ksyYp6N356Tms1xFELjokw
+      - GF_AUTH_ANONYMOUS_ENABLED=true
+      - GF_USERS_ALLOW_SIGN_UP=false
+      - GF_USERS_ALLOW_ORG_CREATE=false
+  grafana-auto:
+    build: .
+    container_name: grafana-auto
+    links:
+      - grafana
+    depends_on:
+      - grafana
+    environment:
+      - GF_USER=alayadash
+      - GF_PASSWORD=hpjxnbqbxEABDKiQ63ksyYp6N356Tms1xFELjokw
+  maildev:
+    image: djfarrelly/maildev
+    container_name: maildev-server
+    restart: always
+    depends_on:
+      - grafana-auto
+    ports:
+      - "1080:80"
+- "1025:25"
