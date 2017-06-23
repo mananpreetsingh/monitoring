@@ -6,6 +6,8 @@ services:
    restart: always
    ports:
       - "2003:2003"
+   volumes:
+      - /data/graphite/storage/whisper:/opt/graphite/storage/whisper
   graphite-beacon:
     image: quay.io/alayacare/owl.graphite-beacon
     container_name: graphite-server-beacon
