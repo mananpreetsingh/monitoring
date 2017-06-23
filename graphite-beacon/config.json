@@ -1,0 +1,44 @@
+{
+"graphite_url": "http://graphite",
+
+ "format": "short",
+ "interval": "5second",
+ "time_window": "15second",
+ "until": "5minute",
+ "repeat_interval": "5minute",
+
+ "critical_handlers": ["log", "smtp"],
+ "warning_handlers": ["log", "smtp"],
+ "normal_handlers": ["log", "smtp"],
+
+
+"smtp": {
+        "from": "admin@grafana.com",
+        "to": ["manan@me.com"],
+        "host": "maildev-server",
+        "port": 25,
+        "username": "",
+        "password": "",
+        "use_tls": true,
+        "html": true,
+        "graphite_url": null
+},
+
+
+"alerts": [
+    {   "name": "MEM",
+        "format": "bytes",
+        "query": "aliasByNode(sumSeriesWithWildcards(collectd.*.memory.{memory-free,memory-cached}, 3), 1)",
+        "rules": ["critical: < 200MB", "warning: < 400MB", "warning: < historical / 2"] },
+
+    {   "name": "CPU",
+        "format": "percent",
+        "query": "aliasByNode(sumSeriesWithWildcards(collectd.*.cpu-*.cpu-user, 2), 1)",
+        "rules": ["critical: >= 80%", "warning: >= 70%"] },
+
+     {   "name": "FREE DISK",
+        "format": "percent",
+        "query": "aliasByNode(sumSeriesWithWildcards(collectd.*.df-root.percent_bytes-free, 2), 1)",
+        "rules": ["critical: <= 25%", "warning: < 30%"] }
+
+]}
