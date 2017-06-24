@@ -1,0 +1,14 @@
+#!/usr/bin/env expect
+
+set timeout -1
+spawn python /opt/graphite/webapp/graphite/manage.py changepassword
+
+expect "Password:" {
+  send "newroot\r"
+}
+
+expect "Password (again):" {
+  send "newroot\r"
+}
+
+expect "Password changed successfully for user 'root' *"
