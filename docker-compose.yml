@@ -48,4 +48,11 @@ services:
     ports:
       - "1080:80"
       - "1025:25"
+  collectd:
+    build : ./collectd
+    privileged: true
+    container_name: collectd
+    restart: always
+    depends_on:
+      - graphite
       
