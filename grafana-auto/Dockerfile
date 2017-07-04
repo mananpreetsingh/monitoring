@@ -1,9 +1,9 @@
-FROM pstauffer/curl
-MAINTAINER mananpreet.singh@alayacare.com
+FROM alpine:3.6
+MAINTAINER DevOps <ops@alayacare.com>
 
-RUN apk --update upgrade && \
-    apk add --update jq && \
-    rm -rf /var/cache/apk/*
+RUN apk --update upgrade \
+    && apk add --update curl jq \
+    && rm -rf /var/cache/apk/*
 
 ADD ./datasources /datasources
 ADD ./dashboards /dashboards

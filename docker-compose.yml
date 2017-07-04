@@ -50,6 +50,7 @@ services:
       - "1025:25"
   collectd:
     build : ./collectd
+#    uts: host
     privileged: true
     container_name: collectd
     restart: always

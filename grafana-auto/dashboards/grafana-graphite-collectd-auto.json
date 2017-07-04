@@ -1,5 +1,6 @@
 {
-      "__inputs": [{
+
+        "__inputs": [{
             "name": "DS_GRAPHITE",
             "label": "graphite-collectd",
             "description": "",
@@ -8,7 +9,6 @@
             "pluginName": "Graphite"
         }
     ],
-  
   "annotations": {
     "list": []
   },
@@ -18,11 +18,11 @@
   "hideControls": false,
   "id": 1,
   "links": [],
-  "refresh": "5s",
+  "refresh": "1m",
   "rows": [
     {
       "collapse": false,
-      "height": 347,
+      "height": "400",
       "panels": [
         {
           "aliasColors": {},
@@ -49,15 +49,22 @@
           "pointradius": 5,
           "points": false,
           "renderer": "flot",
+          "scopedVars": {
+            "servername": {
+              "selected": false,
+              "text": "f2bffe1dd883",
+              "value": "f2bffe1dd883"
+            }
+          },
           "seriesOverrides": [],
           "spaceLength": 10,
-          "span": 5,
+          "span": 6,
           "stack": false,
           "steppedLine": false,
           "targets": [
             {
               "refId": "A",
-              "target": "alias(collectd.$servername.df-root.df_complex-free, 'Free Disk Space')",
+              "target": "alias(collectd.$servername.df-etc-hostname.df_complex-free, 'Free Disk Space')",
               "textEditor": true
             }
           ],
@@ -122,15 +129,22 @@
           "pointradius": 5,
           "points": false,
           "renderer": "flot",
+          "scopedVars": {
+            "servername": {
+              "selected": false,
+              "text": "f2bffe1dd883",
+              "value": "f2bffe1dd883"
+            }
+          },
           "seriesOverrides": [],
           "spaceLength": 10,
-          "span": 5,
+          "span": 6,
           "stack": false,
           "steppedLine": false,
           "targets": [
             {
               "refId": "A",
-              "target": "alias(collectd.$servername.df-root.df_complex-used, 'Used Disk Space')"
+              "target": "alias(collectd.$servername.df-etc-hostname.df_complex-used, 'Used Disk Space')"
             }
           ],
           "thresholds": [],
@@ -169,10 +183,22 @@
               "show": true
             }
           ]
-        },
+        }
+      ],
+      "repeat": "servername",
+      "repeatIteration": null,
+      "repeatRowId": null,
+      "showTitle": true,
+      "title": "Disk Space Graph -  $servername",
+      "titleSize": "h5"
+    },
+    {
+      "collapse": false,
+      "height": "400",
+      "panels": [
         {
           "cacheTimeout": null,
-          "colorBackground": false,
+          "colorBackground": true,
           "colorValue": false,
           "colors": [
             "rgba(245, 54, 54, 0.9)",
@@ -184,7 +210,7 @@
           "gauge": {
             "maxValue": 60000000000,
             "minValue": 0,
-            "show": true,
+            "show": false,
             "thresholdLabels": false,
             "thresholdMarkers": true
           },
@@ -216,7 +242,14 @@
               "to": "null"
             }
           ],
-          "span": 2,
+          "scopedVars": {
+            "servername": {
+              "selected": false,
+              "text": "f2bffe1dd883",
+              "value": "f2bffe1dd883"
+            }
+          },
+          "span": 3,
           "sparkline": {
             "fillColor": "rgba(31, 118, 189, 0.18)",
             "full": false,
@@ -228,11 +261,11 @@
             {
               "hide": false,
               "refId": "A",
-              "target": "alias(collectd.$servername.df-etc-hostname.df_complex-used, 'Used Space')"
+              "target": "sumSeries(collectd.$servername.df-etc-hostname.*)"
             }
           ],
           "thresholds": "",
-          "title": "Used Space",
+          "title": "Total HDD",
           "type": "singlestat",
           "valueFontSize": "80%",
           "valueMaps": [
@@ -243,19 +276,7 @@
             }
           ],
           "valueName": "avg"
-        }
-      ],
-      "repeat": null,
-      "repeatIteration": null,
-      "repeatRowId": null,
-      "showTitle": false,
-      "title": "Dashboard Row",
-      "titleSize": "h6"
-    },
-    {
-      "collapse": false,
-      "height": 250,
-      "panels": [
+        },
         {
           "cacheTimeout": null,
           "colorBackground": false,
@@ -266,7 +287,7 @@
             "rgba(50, 172, 45, 0.97)"
           ],
           "datasource": "${DS_GRAPHITE}",
-          "format": "percent",
+          "format": "decbytes",
           "gauge": {
             "maxValue": 100,
             "minValue": 0,
@@ -302,7 +323,14 @@
               "to": "null"
             }
           ],
-          "span": 6,
+          "scopedVars": {
+            "servername": {
+              "selected": false,
+              "text": "f2bffe1dd883",
+              "value": "f2bffe1dd883"
+            }
+          },
+          "span": 3,
           "sparkline": {
             "fillColor": "rgba(31, 118, 189, 0.18)",
             "full": false,
@@ -313,12 +341,12 @@
           "targets": [
             {
               "refId": "B",
-              "target": "collectd.$servername.df-root.percent_bytes-used",
+              "target": "collectd.$servername.df-etc-hostname.df_complex-used",
               "textEditor": false
             }
           ],
           "thresholds": "",
-          "title": "Used Space :  /root/",
+          "title": "HDD Used Space",
           "type": "singlestat",
           "valueFontSize": "80%",
           "valueMaps": [
@@ -376,7 +404,14 @@
               "to": "null"
             }
           ],
-          "span": 6,
+          "scopedVars": {
+            "servername": {
+              "selected": false,
+              "text": "f2bffe1dd883",
+              "value": "f2bffe1dd883"
+            }
+          },
+          "span": 3,
           "sparkline": {
             "fillColor": "rgba(31, 118, 189, 0.18)",
             "full": false,
@@ -387,11 +422,91 @@
           "targets": [
             {
               "refId": "A",
-              "target": "collectd.$servername.df-etc-hosts.percent_bytes-used"
+              "target": "collectd.$servername.df-etc-hostname.percent_bytes-used"
             }
           ],
           "thresholds": "",
-          "title": "Used Space: /var/log/",
+          "title": "HDD Used Space Percentage",
+          "type": "singlestat",
+          "valueFontSize": "80%",
+          "valueMaps": [
+            {
+              "op": "=",
+              "text": "N/A",
+              "value": "null"
+            }
+          ],
+          "valueName": "avg"
+        },
+        {
+          "cacheTimeout": null,
+          "colorBackground": true,
+          "colorValue": false,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "datasource": "${DS_GRAPHITE}",
+          "format": "decbytes",
+          "gauge": {
+            "maxValue": 100,
+            "minValue": 0,
+            "show": false,
+            "thresholdLabels": false,
+            "thresholdMarkers": true
+          },
+          "id": 12,
+          "interval": null,
+          "links": [],
+          "mappingType": 1,
+          "mappingTypes": [
+            {
+              "name": "value to text",
+              "value": 1
+            },
+            {
+              "name": "range to text",
+              "value": 2
+            }
+          ],
+          "maxDataPoints": 100,
+          "nullPointMode": "connected",
+          "nullText": null,
+          "postfix": "",
+          "postfixFontSize": "50%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "rangeMaps": [
+            {
+              "from": "null",
+              "text": "N/A",
+              "to": "null"
+            }
+          ],
+          "scopedVars": {
+            "servername": {
+              "selected": false,
+              "text": "f2bffe1dd883",
+              "value": "f2bffe1dd883"
+            }
+          },
+          "span": 3,
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": false,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": false
+          },
+          "tableColumn": "",
+          "targets": [
+            {
+              "refId": "A",
+              "target": "sumSeries(collectd.$servername.memory.*)"
+            }
+          ],
+          "thresholds": "",
+          "title": "Total Memory",
           "type": "singlestat",
           "valueFontSize": "80%",
           "valueMaps": [
@@ -404,16 +519,16 @@
           "valueName": "avg"
         }
       ],
-      "repeat": null,
+      "repeat": "servername",
       "repeatIteration": null,
       "repeatRowId": null,
-      "showTitle": false,
-      "title": "Dashboard Row",
-      "titleSize": "h6"
+      "showTitle": true,
+      "title": "Disk Space Metrics - $servername",
+      "titleSize": "h5"
     },
     {
       "collapse": false,
-      "height": 252,
+      "height": "250",
       "panels": [
         {
           "cacheTimeout": null,
@@ -425,11 +540,11 @@
             "rgba(50, 172, 45, 0.97)"
           ],
           "datasource": "${DS_GRAPHITE}",
-          "format": "decbytes",
+          "format": "percent",
           "gauge": {
             "maxValue": 100,
             "minValue": 0,
-            "show": false,
+            "show": true,
             "thresholdLabels": false,
             "thresholdMarkers": true
           },
@@ -461,6 +576,13 @@
               "to": "null"
             }
           ],
+          "scopedVars": {
+            "servername": {
+              "selected": false,
+              "text": "f2bffe1dd883",
+              "value": "f2bffe1dd883"
+            }
+          },
           "span": 3,
           "sparkline": {
             "fillColor": "rgba(31, 118, 189, 0.18)",
@@ -472,11 +594,11 @@
           "targets": [
             {
               "refId": "A",
-              "target": "collectd.$servername.memory.memory-free"
+              "target": "collectd.$servername.memory.percent-free"
             }
           ],
           "thresholds": "",
-          "title": "Free Memory",
+          "title": "Free Memory %",
           "transparent": false,
           "type": "singlestat",
           "valueFontSize": "80%",
@@ -499,11 +621,11 @@
             "rgba(50, 172, 45, 0.97)"
           ],
           "datasource": "${DS_GRAPHITE}",
-          "format": "decbytes",
+          "format": "percent",
           "gauge": {
             "maxValue": 100,
             "minValue": 0,
-            "show": false,
+            "show": true,
             "thresholdLabels": false,
             "thresholdMarkers": true
           },
@@ -535,6 +657,13 @@
               "to": "null"
             }
           ],
+          "scopedVars": {
+            "servername": {
+              "selected": false,
+              "text": "f2bffe1dd883",
+              "value": "f2bffe1dd883"
+            }
+          },
           "span": 3,
           "sparkline": {
             "fillColor": "rgba(31, 118, 189, 0.18)",
@@ -546,11 +675,11 @@
           "targets": [
             {
               "refId": "A",
-              "target": "collectd.$servername.memory.memory-used"
+              "target": "collectd.$servername.memory.percent-used"
             }
           ],
           "thresholds": "",
-          "title": "Memory Used",
+          "title": "Used Memory %",
           "transparent": false,
           "type": "singlestat",
           "valueFontSize": "80%",
@@ -573,11 +702,11 @@
             "rgba(50, 172, 45, 0.97)"
           ],
           "datasource": "${DS_GRAPHITE}",
-          "format": "decbytes",
+          "format": "percent",
           "gauge": {
             "maxValue": 100,
             "minValue": 0,
-            "show": false,
+            "show": true,
             "thresholdLabels": false,
             "thresholdMarkers": true
           },
@@ -609,6 +738,13 @@
               "to": "null"
             }
           ],
+          "scopedVars": {
+            "servername": {
+              "selected": false,
+              "text": "f2bffe1dd883",
+              "value": "f2bffe1dd883"
+            }
+          },
           "span": 3,
           "sparkline": {
             "fillColor": "rgba(31, 118, 189, 0.18)",
@@ -620,11 +756,11 @@
           "targets": [
             {
               "refId": "A",
-              "target": "collectd.$servername.memory.memory-buffered"
+              "target": "collectd.$servername.memory.percent-buffered"
             }
           ],
           "thresholds": "",
-          "title": "Buffer",
+          "title": "Buffer Memory %",
           "transparent": false,
           "type": "singlestat",
           "valueFontSize": "80%",
@@ -647,11 +783,11 @@
             "rgba(50, 172, 45, 0.97)"
           ],
           "datasource": "${DS_GRAPHITE}",
-          "format": "decbytes",
+          "format": "percent",
           "gauge": {
             "maxValue": 100,
             "minValue": 0,
-            "show": false,
+            "show": true,
             "thresholdLabels": false,
             "thresholdMarkers": true
           },
@@ -683,6 +819,13 @@
               "to": "null"
             }
           ],
+          "scopedVars": {
+            "servername": {
+              "selected": false,
+              "text": "f2bffe1dd883",
+              "value": "f2bffe1dd883"
+            }
+          },
           "span": 3,
           "sparkline": {
             "fillColor": "rgba(31, 118, 189, 0.18)",
@@ -694,11 +837,11 @@
           "targets": [
             {
               "refId": "A",
-              "target": "collectd.$servername.memory.memory-cached"
+              "target": "collectd.$servername.memory.percent-cached"
             }
           ],
           "thresholds": "",
-          "title": "Cache",
+          "title": "Cache Memory %",
           "transparent": false,
           "type": "singlestat",
           "valueFontSize": "80%",
@@ -712,16 +855,119 @@
           "valueName": "avg"
         }
       ],
-      "repeat": null,
+      "repeat": "servername",
       "repeatIteration": null,
       "repeatRowId": null,
-      "showTitle": false,
-      "title": "Dashboard Row",
-      "titleSize": "h6"
+      "showTitle": true,
+      "title": "CPU Memory Gauges - $servername",
+      "titleSize": "h5"
     },
     {
       "collapse": false,
-      "height": 265,
+      "height": "400",
+      "panels": [
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "${DS_GRAPHITE}",
+          "fill": 1,
+          "id": 13,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "scopedVars": {
+            "servername": {
+              "selected": false,
+              "text": "f2bffe1dd883",
+              "value": "f2bffe1dd883"
+            }
+          },
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "span": 12,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "refId": "A",
+              "target": "alias(collectd.$servername.memory.memory-free, 'Free Memory')"
+            },
+            {
+              "refId": "B",
+              "target": "alias(collectd.$servername.memory.memory-used, 'Used Memory')"
+            },
+            {
+              "refId": "C",
+              "target": "alias(collectd.$servername.memory.memory-buffered, 'Buffered Memory')"
+            },
+            {
+              "refId": "D",
+              "target": "alias(collectd.$servername.memory.memory-cached, 'Cached Memory')"
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "CPU Memory",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "decbytes",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "decbytes",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ]
+        }
+      ],
+      "repeat": "servername",
+      "repeatIteration": null,
+      "repeatRowId": null,
+      "showTitle": true,
+      "title": "CPU Memory Graph - $servername",
+      "titleSize": "h5"
+    },
+    {
+      "collapse": false,
+      "height": "400",
       "panels": [
         {
           "aliasColors": {},
@@ -748,6 +994,13 @@
           "pointradius": 5,
           "points": false,
           "renderer": "flot",
+          "scopedVars": {
+            "servername": {
+              "selected": false,
+              "text": "f2bffe1dd883",
+              "value": "f2bffe1dd883"
+            }
+          },
           "seriesOverrides": [
             {
               "alias": "collectd7e1ff46e2fcecollectd.cpu-0.cpu-system",
@@ -817,16 +1070,16 @@
           ]
         }
       ],
-      "repeat": null,
+      "repeat": "servername",
       "repeatIteration": null,
       "repeatRowId": null,
-      "showTitle": false,
-      "title": "Dashboard Row",
-      "titleSize": "h6"
+      "showTitle": true,
+      "title": "CPU Usage Graph - $servername",
+      "titleSize": "h5"
     },
     {
       "collapse": false,
-      "height": 242,
+      "height": "400",
       "panels": [
         {
           "aliasColors": {},
@@ -835,6 +1088,7 @@
           "dashes": false,
           "datasource": "${DS_GRAPHITE}",
           "fill": 1,
+          "height": "",
           "id": 11,
           "legend": {
             "avg": false,
@@ -853,6 +1107,13 @@
           "pointradius": 5,
           "points": false,
           "renderer": "flot",
+          "scopedVars": {
+            "servername": {
+              "selected": false,
+              "text": "f2bffe1dd883",
+              "value": "f2bffe1dd883"
+            }
+          },
           "seriesOverrides": [],
           "spaceLength": 10,
           "span": 12,
@@ -905,12 +1166,12 @@
           ]
         }
       ],
-      "repeat": null,
+      "repeat": "servername",
       "repeatIteration": null,
       "repeatRowId": null,
-      "showTitle": false,
-      "title": "Dashboard Row",
-      "titleSize": "h6"
+      "showTitle": true,
+      "title": "Network Usage Graph - $servername",
+      "titleSize": "h5"
     }
   ],
   "schemaVersion": 14,
@@ -921,14 +1182,17 @@
       {
         "allValue": "",
         "current": {
+          "tags": [],
           "text": "All",
-          "value": "$__all"
+          "value": [
+            "$__all"
+          ]
         },
         "datasource": "${DS_GRAPHITE}",
         "hide": 0,
         "includeAll": true,
         "label": null,
-        "multi": false,
+        "multi": true,
         "name": "servername",
         "options": [],
         "query": "collectd.*",
@@ -944,7 +1208,7 @@
     ]
   },
   "time": {
-    "from": "now-5m",
+    "from": "now-30m",
     "to": "now"
   },
   "timepicker": {
@@ -974,5 +1238,5 @@
   },
   "timezone": "browser",
   "title": "Grafana- Graphite-Collectd - Auto",
-  "version": 0
+  "version": 1
 }
