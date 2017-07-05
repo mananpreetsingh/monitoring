@@ -1,7 +1,7 @@
 #!/bin/sh
 
 GF_API=${GF_API:-http://grafana:3000/api}
-GF_USER=${GF_USER:-alayadash}
+GF_USER=${GF_USER:-msingh}
 GF_PASSWORD=${GF_PASSWORD:-hpjxnbqbxEABDKiQ63ksyYp6N356Tms1xFELjokw}
 
 print_header() {
