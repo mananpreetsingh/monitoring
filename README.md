@@ -33,6 +33,6 @@ You are ready to go!
 
 To remove all data and containers use below commands:
 
-	`docker-compose stop`
+	docker-compose stop
 
-	`docker-compse rm -f`
+	docker-compse rm -f
