@@ -17,9 +17,9 @@ Monitoring prject contains below components:
 
 Follow the below steps in order to test it in your docker environment:
 
-**Step 1:** Git clone the repository using command: `git clone https://github.com/mananpreetsingh/owl.git`
+**Step 1:** Git clone the repository using command: `git clone https://github.com/mananpreetsingh/monitoring.git`
 
-**Step 2:** Change your current directory to "owl" by running command `cd owl`
+**Step 2:** Change your current directory to "owl" by running command `cd monitoring`
 
 **Step 3:** Run the command `docker-compose up -d`
 
