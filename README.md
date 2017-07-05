@@ -21,11 +21,9 @@ Follow the below steps in order to test it in your docker environment:
 
 **Step 2:** Change your current directory to "owl" by running command `cd owl`
 
-**Step 3:** Go to dir "owl/grafana-auto/"  `cd owl/grafana-auto/` Change the "entrypoint.sh" file permission to 754 using, commandds `chmod 754 entrypoint.sh`
+**Step 3:** Run the command `docker-compose up -d`
 
-**Step 4:** Come back to parent directory "owl" `cd ..` Run the command `docker-compose up -d`
-
-**Step 5:** Check everything is up and running using docker command `docker ps`
+**Step 5:** Check everything is up and running using docker command `docker-compose ps`
  <br> <br>
 
 Now all you need to do is send metrics to Graphite server, for that you have run a new container with collectd service installed on it and then start the service on that contianer.
