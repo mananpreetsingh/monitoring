@@ -24,7 +24,7 @@ services:
     links:
       - graphite:graphite-server
     environment:
-      - GF_SECURITY_ADMIN_USER=alayadash
+      - GF_SECURITY_ADMIN_USER=msingh
       - GF_SECURITY_ADMIN_PASSWORD=hpjxnbqbxEABDKiQ63ksyYp6N356Tms1xFELjokw
       - GF_AUTH_ANONYMOUS_ENABLED=true
       - GF_USERS_ALLOW_SIGN_UP=false
@@ -37,7 +37,7 @@ services:
     depends_on:
       - grafana
     environment:
-      - GF_USER=alayadash
+      - GF_USER=msingh
       - GF_PASSWORD=hpjxnbqbxEABDKiQ63ksyYp6N356Tms1xFELjokw
   maildev:
     image: djfarrelly/maildev
