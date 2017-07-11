@@ -1,0 +1,1269 @@
+{
+          "__inputs": [{
+            "name": "DS_GRAPHITE",
+            "label": "graphite-collectd",
+            "description": "",
+            "type": "datasource",
+            "pluginId": "graphite",
+            "pluginName": "Graphite"
+        }
+    ],
+  "annotations": {
+    "list": []
+  },
+  "editable": true,
+  "gnetId": null,
+  "graphTooltip": 0,
+  "hideControls": false,
+  "id": 4,
+  "links": [],
+  "refresh": "1m",
+  "rows": [
+    {
+      "collapse": false,
+      "height": "400",
+      "panels": [
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "${DS_GRAPHITE}",
+          "fill": 1,
+          "id": 6,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "scopedVars": {
+            "servername": {
+              "selected": true,
+              "text": "ip-172-21-2-33",
+              "value": "ip-172-21-2-33"
+            }
+          },
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "span": 6,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "refId": "A",
+              "target": "alias(collectd.$servername.df-etc-hostname.df_complex-free, 'Free Disk Space')",
+              "textEditor": true
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Free Disk Space",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "decbytes",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ]
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "${DS_GRAPHITE}",
+          "fill": 1,
+          "id": 7,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "scopedVars": {
+            "servername": {
+              "selected": true,
+              "text": "ip-172-21-2-33",
+              "value": "ip-172-21-2-33"
+            }
+          },
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "span": 6,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "refId": "A",
+              "target": "alias(collectd.$servername.df-etc-hostname.df_complex-used, 'Used Disk Space')"
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Used Disk Space",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "transparent": false,
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "decbytes",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ]
+        }
+      ],
+      "repeat": "servername",
+      "repeatIteration": null,
+      "repeatRowId": null,
+      "showTitle": true,
+      "title": "Disk Space Graph -  $servername",
+      "titleSize": "h5"
+    },
+    {
+      "collapse": false,
+      "height": "400",
+      "panels": [
+        {
+          "cacheTimeout": null,
+          "colorBackground": true,
+          "colorValue": false,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "datasource": "${DS_GRAPHITE}",
+          "format": "decbytes",
+          "gauge": {
+            "maxValue": 60000000000,
+            "minValue": 0,
+            "show": false,
+            "thresholdLabels": false,
+            "thresholdMarkers": true
+          },
+          "id": 8,
+          "interval": null,
+          "links": [],
+          "mappingType": 1,
+          "mappingTypes": [
+            {
+              "name": "value to text",
+              "value": 1
+            },
+            {
+              "name": "range to text",
+              "value": 2
+            }
+          ],
+          "maxDataPoints": 100,
+          "nullPointMode": "connected",
+          "nullText": null,
+          "postfix": "",
+          "postfixFontSize": "50%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "rangeMaps": [
+            {
+              "from": "null",
+              "text": "N/A",
+              "to": "null"
+            }
+          ],
+          "scopedVars": {
+            "servername": {
+              "selected": true,
+              "text": "ip-172-21-2-33",
+              "value": "ip-172-21-2-33"
+            }
+          },
+          "span": 3,
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": false,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": true
+          },
+          "tableColumn": "",
+          "targets": [
+            {
+              "hide": false,
+              "refId": "A",
+              "target": "sumSeries(collectd.$servername.df-etc-hostname.*)"
+            }
+          ],
+          "thresholds": "",
+          "title": "Total HDD",
+          "type": "singlestat",
+          "valueFontSize": "80%",
+          "valueMaps": [
+            {
+              "op": "=",
+              "text": "N/A",
+              "value": "null"
+            }
+          ],
+          "valueName": "avg"
+        },
+        {
+          "cacheTimeout": null,
+          "colorBackground": false,
+          "colorValue": false,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "datasource": "${DS_GRAPHITE}",
+          "format": "decbytes",
+          "gauge": {
+            "maxValue": 100,
+            "minValue": 0,
+            "show": false,
+            "thresholdLabels": false,
+            "thresholdMarkers": true
+          },
+          "id": 9,
+          "interval": null,
+          "links": [],
+          "mappingType": 1,
+          "mappingTypes": [
+            {
+              "name": "value to text",
+              "value": 1
+            },
+            {
+              "name": "range to text",
+              "value": 2
+            }
+          ],
+          "maxDataPoints": 100,
+          "nullPointMode": "connected",
+          "nullText": null,
+          "postfix": "",
+          "postfixFontSize": "50%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "rangeMaps": [
+            {
+              "from": "null",
+              "text": "N/A",
+              "to": "null"
+            }
+          ],
+          "scopedVars": {
+            "servername": {
+              "selected": true,
+              "text": "ip-172-21-2-33",
+              "value": "ip-172-21-2-33"
+            }
+          },
+          "span": 3,
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": false,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": true
+          },
+          "tableColumn": "",
+          "targets": [
+            {
+              "refId": "B",
+              "target": "collectd.$servername.df-etc-hostname.df_complex-used",
+              "textEditor": false
+            }
+          ],
+          "thresholds": "",
+          "title": "HDD Used Space",
+          "type": "singlestat",
+          "valueFontSize": "80%",
+          "valueMaps": [
+            {
+              "op": "=",
+              "text": "N/A",
+              "value": "null"
+            }
+          ],
+          "valueName": "avg"
+        },
+        {
+          "cacheTimeout": null,
+          "colorBackground": false,
+          "colorValue": false,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "datasource": "${DS_GRAPHITE}",
+          "format": "percent",
+          "gauge": {
+            "maxValue": 100,
+            "minValue": 0,
+            "show": true,
+            "thresholdLabels": false,
+            "thresholdMarkers": true
+          },
+          "id": 10,
+          "interval": null,
+          "links": [],
+          "mappingType": 1,
+          "mappingTypes": [
+            {
+              "name": "value to text",
+              "value": 1
+            },
+            {
+              "name": "range to text",
+              "value": 2
+            }
+          ],
+          "maxDataPoints": 100,
+          "nullPointMode": "connected",
+          "nullText": null,
+          "postfix": "",
+          "postfixFontSize": "50%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "rangeMaps": [
+            {
+              "from": "null",
+              "text": "N/A",
+              "to": "null"
+            }
+          ],
+          "scopedVars": {
+            "servername": {
+              "selected": true,
+              "text": "ip-172-21-2-33",
+              "value": "ip-172-21-2-33"
+            }
+          },
+          "span": 3,
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": false,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": true
+          },
+          "tableColumn": "",
+          "targets": [
+            {
+              "refId": "A",
+              "target": "collectd.$servername.df-etc-hostname.percent_bytes-used"
+            }
+          ],
+          "thresholds": "",
+          "title": "HDD Used Space Percentage",
+          "type": "singlestat",
+          "valueFontSize": "80%",
+          "valueMaps": [
+            {
+              "op": "=",
+              "text": "N/A",
+              "value": "null"
+            }
+          ],
+          "valueName": "avg"
+        },
+        {
+          "cacheTimeout": null,
+          "colorBackground": true,
+          "colorValue": false,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "datasource": "${DS_GRAPHITE}",
+          "format": "decbytes",
+          "gauge": {
+            "maxValue": 100,
+            "minValue": 0,
+            "show": false,
+            "thresholdLabels": false,
+            "thresholdMarkers": true
+          },
+          "id": 12,
+          "interval": null,
+          "links": [],
+          "mappingType": 1,
+          "mappingTypes": [
+            {
+              "name": "value to text",
+              "value": 1
+            },
+            {
+              "name": "range to text",
+              "value": 2
+            }
+          ],
+          "maxDataPoints": 100,
+          "nullPointMode": "connected",
+          "nullText": null,
+          "postfix": "",
+          "postfixFontSize": "50%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "rangeMaps": [
+            {
+              "from": "null",
+              "text": "N/A",
+              "to": "null"
+            }
+          ],
+          "scopedVars": {
+            "servername": {
+              "selected": true,
+              "text": "ip-172-21-2-33",
+              "value": "ip-172-21-2-33"
+            }
+          },
+          "span": 3,
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": false,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": false
+          },
+          "tableColumn": "",
+          "targets": [
+            {
+              "refId": "A",
+              "target": "sumSeries(collectd.$servername.memory.*)"
+            }
+          ],
+          "thresholds": "",
+          "title": "Total Memory",
+          "type": "singlestat",
+          "valueFontSize": "80%",
+          "valueMaps": [
+            {
+              "op": "=",
+              "text": "N/A",
+              "value": "null"
+            }
+          ],
+          "valueName": "avg"
+        }
+      ],
+      "repeat": "servername",
+      "repeatIteration": null,
+      "repeatRowId": null,
+      "showTitle": true,
+      "title": "Disk Space Metrics - $servername",
+      "titleSize": "h5"
+    },
+    {
+      "collapse": false,
+      "height": "250",
+      "panels": [
+        {
+          "cacheTimeout": null,
+          "colorBackground": false,
+          "colorValue": true,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "datasource": "${DS_GRAPHITE}",
+          "format": "percent",
+          "gauge": {
+            "maxValue": 100,
+            "minValue": 0,
+            "show": true,
+            "thresholdLabels": false,
+            "thresholdMarkers": true
+          },
+          "id": 2,
+          "interval": null,
+          "links": [],
+          "mappingType": 1,
+          "mappingTypes": [
+            {
+              "name": "value to text",
+              "value": 1
+            },
+            {
+              "name": "range to text",
+              "value": 2
+            }
+          ],
+          "maxDataPoints": 100,
+          "nullPointMode": "connected",
+          "nullText": null,
+          "postfix": "",
+          "postfixFontSize": "50%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "rangeMaps": [
+            {
+              "from": "null",
+              "text": "N/A",
+              "to": "null"
+            }
+          ],
+          "scopedVars": {
+            "servername": {
+              "selected": true,
+              "text": "ip-172-21-2-33",
+              "value": "ip-172-21-2-33"
+            }
+          },
+          "span": 3,
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": false,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": true
+          },
+          "tableColumn": "",
+          "targets": [
+            {
+              "refId": "A",
+              "target": "collectd.$servername.memory.percent-free"
+            }
+          ],
+          "thresholds": "",
+          "title": "Free Memory %",
+          "transparent": false,
+          "type": "singlestat",
+          "valueFontSize": "80%",
+          "valueMaps": [
+            {
+              "op": "=",
+              "text": "N/A",
+              "value": "null"
+            }
+          ],
+          "valueName": "avg"
+        },
+        {
+          "cacheTimeout": null,
+          "colorBackground": false,
+          "colorValue": true,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "datasource": "${DS_GRAPHITE}",
+          "format": "percent",
+          "gauge": {
+            "maxValue": 100,
+            "minValue": 0,
+            "show": true,
+            "thresholdLabels": false,
+            "thresholdMarkers": true
+          },
+          "id": 5,
+          "interval": null,
+          "links": [],
+          "mappingType": 1,
+          "mappingTypes": [
+            {
+              "name": "value to text",
+              "value": 1
+            },
+            {
+              "name": "range to text",
+              "value": 2
+            }
+          ],
+          "maxDataPoints": 100,
+          "nullPointMode": "connected",
+          "nullText": null,
+          "postfix": "",
+          "postfixFontSize": "50%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "rangeMaps": [
+            {
+              "from": "null",
+              "text": "N/A",
+              "to": "null"
+            }
+          ],
+          "scopedVars": {
+            "servername": {
+              "selected": true,
+              "text": "ip-172-21-2-33",
+              "value": "ip-172-21-2-33"
+            }
+          },
+          "span": 3,
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": false,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": true
+          },
+          "tableColumn": "",
+          "targets": [
+            {
+              "refId": "A",
+              "target": "collectd.$servername.memory.percent-cached"
+            }
+          ],
+          "thresholds": "",
+          "title": "Cache Memory %",
+          "transparent": false,
+          "type": "singlestat",
+          "valueFontSize": "80%",
+          "valueMaps": [
+            {
+              "op": "=",
+              "text": "N/A",
+              "value": "null"
+            }
+          ],
+          "valueName": "avg"
+        },
+        {
+          "cacheTimeout": null,
+          "colorBackground": false,
+          "colorValue": true,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "datasource": "${DS_GRAPHITE}",
+          "format": "percent",
+          "gauge": {
+            "maxValue": 100,
+            "minValue": 0,
+            "show": true,
+            "thresholdLabels": false,
+            "thresholdMarkers": true
+          },
+          "id": 4,
+          "interval": null,
+          "links": [],
+          "mappingType": 1,
+          "mappingTypes": [
+            {
+              "name": "value to text",
+              "value": 1
+            },
+            {
+              "name": "range to text",
+              "value": 2
+            }
+          ],
+          "maxDataPoints": 100,
+          "nullPointMode": "connected",
+          "nullText": null,
+          "postfix": "",
+          "postfixFontSize": "50%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "rangeMaps": [
+            {
+              "from": "null",
+              "text": "N/A",
+              "to": "null"
+            }
+          ],
+          "scopedVars": {
+            "servername": {
+              "selected": true,
+              "text": "ip-172-21-2-33",
+              "value": "ip-172-21-2-33"
+            }
+          },
+          "span": 3,
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": false,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": true
+          },
+          "tableColumn": "",
+          "targets": [
+            {
+              "refId": "A",
+              "target": "collectd.$servername.memory.percent-buffered"
+            }
+          ],
+          "thresholds": "",
+          "title": "Buffer Memory %",
+          "transparent": false,
+          "type": "singlestat",
+          "valueFontSize": "80%",
+          "valueMaps": [
+            {
+              "op": "=",
+              "text": "N/A",
+              "value": "null"
+            }
+          ],
+          "valueName": "avg"
+        },
+        {
+          "cacheTimeout": null,
+          "colorBackground": false,
+          "colorValue": true,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "datasource": "${DS_GRAPHITE}",
+          "format": "percent",
+          "gauge": {
+            "maxValue": 100,
+            "minValue": 0,
+            "show": true,
+            "thresholdLabels": false,
+            "thresholdMarkers": true
+          },
+          "id": 3,
+          "interval": null,
+          "links": [],
+          "mappingType": 1,
+          "mappingTypes": [
+            {
+              "name": "value to text",
+              "value": 1
+            },
+            {
+              "name": "range to text",
+              "value": 2
+            }
+          ],
+          "maxDataPoints": 100,
+          "nullPointMode": "connected",
+          "nullText": null,
+          "postfix": "",
+          "postfixFontSize": "50%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "rangeMaps": [
+            {
+              "from": "null",
+              "text": "N/A",
+              "to": "null"
+            }
+          ],
+          "scopedVars": {
+            "servername": {
+              "selected": true,
+              "text": "ip-172-21-2-33",
+              "value": "ip-172-21-2-33"
+            }
+          },
+          "span": 3,
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": false,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": true
+          },
+          "tableColumn": "",
+          "targets": [
+            {
+              "refId": "A",
+              "target": "collectd.$servername.memory.percent-used"
+            }
+          ],
+          "thresholds": "",
+          "title": "Used Memory %",
+          "transparent": false,
+          "type": "singlestat",
+          "valueFontSize": "80%",
+          "valueMaps": [
+            {
+              "op": "=",
+              "text": "N/A",
+              "value": "null"
+            }
+          ],
+          "valueName": "avg"
+        }
+      ],
+      "repeat": "servername",
+      "repeatIteration": null,
+      "repeatRowId": null,
+      "showTitle": true,
+      "title": "Memory Gauges - $servername",
+      "titleSize": "h5"
+    },
+    {
+      "collapse": false,
+      "height": "400",
+      "panels": [
+        {
+          "aliasColors": {
+            "Buffered Memory": "#6ED0E0",
+            "Cached Memory": "#EAB839",
+            "Free Memory": "#7EB26D",
+            "Used Memory": "#E24D42"
+          },
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "${DS_GRAPHITE}",
+          "decimals": 2,
+          "fill": 8,
+          "id": 13,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "max": true,
+            "min": true,
+            "rightSide": false,
+            "show": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 0,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "scopedVars": {
+            "servername": {
+              "selected": true,
+              "text": "ip-172-21-2-33",
+              "value": "ip-172-21-2-33"
+            }
+          },
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "span": 12,
+          "stack": true,
+          "steppedLine": false,
+          "targets": [
+            {
+              "refId": "B",
+              "target": "alias(collectd.$servername.memory.memory-used, 'Used Memory')"
+            },
+            {
+              "hide": false,
+              "refId": "C",
+              "target": "alias(collectd.$servername.memory.memory-buffered, 'Buffered Memory')"
+            },
+            {
+              "hide": false,
+              "refId": "D",
+              "target": "alias(collectd.$servername.memory.memory-cached, 'Cached Memory')"
+            },
+            {
+              "hide": false,
+              "refId": "A",
+              "target": "alias(collectd.$servername.memory.memory-free, 'Free Memory')"
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Memory Usage",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "decbytes",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "decbytes",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ]
+        }
+      ],
+      "repeat": "servername",
+      "repeatIteration": null,
+      "repeatRowId": null,
+      "showTitle": true,
+      "title": "Memory Graph - $servername",
+      "titleSize": "h5"
+    },
+    {
+      "collapse": false,
+      "height": "400",
+      "panels": [
+        {
+          "aliasColors": {
+            "cpu-idle": "#7EB26D",
+            "cpu-system": "#EAB839",
+            "cpu-user": "#E24D42"
+          },
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "${DS_GRAPHITE}",
+          "fill": 6,
+          "id": 1,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "max": true,
+            "min": true,
+            "rightSide": false,
+            "show": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 0,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "scopedVars": {
+            "servername": {
+              "selected": true,
+              "text": "ip-172-21-2-33",
+              "value": "ip-172-21-2-33"
+            }
+          },
+          "seriesOverrides": [
+            {
+              "alias": "collectd7e1ff46e2fcecollectd.cpu-0.cpu-system",
+              "yaxis": 1
+            }
+          ],
+          "spaceLength": 10,
+          "span": 12,
+          "stack": true,
+          "steppedLine": false,
+          "targets": [
+            {
+              "hide": false,
+              "refId": "F",
+              "target": "aliasByNode(sumSeries(collectd.$servername.cpu-*.cpu-user), 3)",
+              "textEditor": false
+            },
+            {
+              "hide": false,
+              "refId": "G",
+              "target": "aliasByNode(sumSeries(collectd.$servername.cpu-*.cpu-system), 3)",
+              "textEditor": false
+            },
+            {
+              "hide": false,
+              "refId": "E",
+              "target": "aliasByNode(sumSeries(collectd.$servername.cpu-*.cpu-idle), 3)",
+              "textEditor": false
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "CPU Usage",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "percent",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ]
+        }
+      ],
+      "repeat": "servername",
+      "repeatIteration": null,
+      "repeatRowId": null,
+      "showTitle": true,
+      "title": "CPU Usage Graph - $servername",
+      "titleSize": "h5"
+    },
+    {
+      "collapse": true,
+      "height": "400",
+      "panels": [
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "${DS_GRAPHITE}",
+          "decimals": 3,
+          "fill": 4,
+          "height": "",
+          "id": 11,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "hideEmpty": false,
+            "hideZero": false,
+            "max": true,
+            "min": true,
+            "rightSide": false,
+            "show": true,
+            "sideWidth": null,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "scopedVars": {
+            "servername": {
+              "selected": true,
+              "text": "ip-172-21-2-33",
+              "value": "ip-172-21-2-33"
+            }
+          },
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "span": 12,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "hide": true,
+              "refId": "A",
+              "target": "alias(collectd.$servername.interface-eth0.if_packets.tx, 'tx Packets')"
+            },
+            {
+              "hide": true,
+              "refId": "B",
+              "target": "alias(collectd.$servername.interface-eth0.if_packets.rx, 'rx Packets')"
+            },
+            {
+              "refId": "D",
+              "target": "collectd.$servername.interface-eth0.if_octets.tx"
+            },
+            {
+              "refId": "C",
+              "target": "collectd.$servername.interface-eth0.if_octets.rx"
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "tx and rx Packets",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "none",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": false
+            }
+          ]
+        }
+      ],
+      "repeat": "servername",
+      "repeatIteration": null,
+      "repeatRowId": null,
+      "showTitle": true,
+      "title": "Network Usage Graph - $servername",
+      "titleSize": "h5"
+    }
+  ],
+  "schemaVersion": 14,
+  "style": "dark",
+  "tags": [],
+  "templating": {
+    "list": [
+      {
+        "allValue": "",
+        "current": {
+          "text": "ip-172-21-2-33",
+          "value": "ip-172-21-2-33"
+        },
+        "datasource": "${DS_GRAPHITE}",
+        "hide": 0,
+        "includeAll": true,
+        "label": null,
+        "multi": true,
+        "name": "servername",
+        "options": [],
+        "query": "collectd.*",
+        "refresh": 1,
+        "regex": "",
+        "sort": 0,
+        "tagValuesQuery": "",
+        "tags": [],
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
+      }
+    ]
+  },
+  "time": {
+    "from": "now-30m",
+    "to": "now"
+  },
+  "timepicker": {
+    "refresh_intervals": [
+      "5s",
+      "10s",
+      "30s",
+      "1m",
+      "5m",
+      "15m",
+      "30m",
+      "1h",
+      "2h",
+      "1d"
+    ],
+    "time_options": [
+      "5m",
+      "15m",
+      "1h",
+      "6h",
+      "12h",
+      "24h",
+      "2d",
+      "7d",
+      "30d"
+    ]
+  },
+  "timezone": "browser",
+  "title": "Server Metrics",
+  "version": 38
+}
